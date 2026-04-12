@@ -3,19 +3,13 @@
 
 
 
-// // додає поле mood зі значенням 'happy'
-// // замінює значення hobby на 'skydiving'
-// // замінює значення premium на false
-// // виводить вміст об'єкта user в форматі ключ:значення використовуючи Object.keys() і for...of
-// const user = {
-//     hobby: "playing football",
-//     premium: true,
-// }
-// user.mood = "happy"
-// user.hobby = "skydiving"
-// user.premium = false
-// for (const element of user) {
-//     console.log(Object.keys);
-// }
-
-document.querySelectorAll()
+// додає поле mood зі значенням 'happy'
+// замінює значення hobby на 'skydiving'
+// замінює значення premium на false
+// виводить вміст об'єкта user в форматі ключ:значення використовуючи Object.keys() і for...of
+let user = {
+    hobby: football,
+}
+user.mood = "happy"
+user.hobby = "skydiving  
+console.log(user)

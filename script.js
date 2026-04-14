@@ -27,15 +27,19 @@ console.log(user2.countProps(user2))
 //3
 // Напиши функцію findBestEmployee(employees), яка приймає об'єкт співробітників і повертає ім'я найпродуктивнішого (який виконав більше всіх задач). Співробітники і кількість виконаних завдань містяться як властивості об'єкта в форматі "ім'я":"кількість задач".
 function findBestEmployee(employees) {
-  let theBestEmployer = "";
-  const employersKeys = Object.keys(employees);
-  for (const employer of employersKeys) {
-    if (employersKeys[employer] > theBestEmployer) {
-      employer = theBestEmployer;
-      console.log(`${theBestEmployer}: ${employees.values}`);
-    }
+  // let TheBestEmployerName = "";
+let TheBestEmployerNumber = 0
+const employeesValues = Object.values(employees);
+for (let employer = 0; employer < employeesValues.length; employer++) {
+  if(employer > TheBestEmployerNumber){
+    TheBestEmployerNumber = employer
+    console.log(TheBestEmployerNumber)
   }
+  
 }
+return TheBestEmployerNumber;
+}
+
 const employees = {
     Andriy: 45,
     Olena: 128,
@@ -44,6 +48,7 @@ const employees = {
     Anastasia: 95,
     
 }
+console.log(Object.values(employees));
 console.log(findBestEmployee(employees));
 
 
@@ -54,7 +59,12 @@ console.log(findBestEmployee(employees));
 //4
 // Напиши функцію countTotalSalary(employees) приймаючу об'єкт зарплат. Функція рахує загальну суму зарплати працівників і повертає її. Кожне поле об'єкта, переданого в функцію, має вигляд "ім'я":"зарплата".
 function countTotalSalary(employeesSalaries){
-employeesSalaries.values
+// const sum1 = Object.values(employeesSalaries);
+for (const employer2 in employeesSalaries) {
+  const a = employeesSalaries[employer2]
+  
+}
+return a
 }
 const employeesSalaries = {
     Andriy: 34000,
@@ -63,5 +73,4 @@ const employeesSalaries = {
     Vlad: 0,
     Anastasia: 59000,
 }
-console.log(obj.key);
-//5
+console.log(countTotalSalary(employeesSalaries));

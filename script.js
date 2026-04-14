@@ -27,17 +27,16 @@ console.log(user2.countProps(user2))
 //3
 // Напиши функцію findBestEmployee(employees), яка приймає об'єкт співробітників і повертає ім'я найпродуктивнішого (який виконав більше всіх задач). Співробітники і кількість виконаних завдань містяться як властивості об'єкта в форматі "ім'я":"кількість задач".
 function findBestEmployee(employees) {
-  // let TheBestEmployerName = "";
+  let TheBestEmployerName = "";
 let TheBestEmployerNumber = 0
-const employeesValues = Object.values(employees);
-for (let employer = 0; employer < employeesValues.length; employer++) {
-  if(employer > TheBestEmployerNumber){
-    TheBestEmployerNumber = employer
-    console.log(TheBestEmployerNumber)
-  }
-  
+const employeesValues = Object.entries(employees);
+for (const [employer, completedTasks] of employeesValues) {
+if(completedTasks > TheBestEmployerNumber){
+  TheBestEmployerNumber = completedTasks;
+    TheBestEmployerName = employer;
 }
-return TheBestEmployerNumber;
+}
+return `${TheBestEmployerName}: ${TheBestEmployerNumber}`;
 }
 
 const employees = {
@@ -48,7 +47,7 @@ const employees = {
     Anastasia: 95,
     
 }
-console.log(Object.values(employees));
+
 console.log(findBestEmployee(employees));
 
 
@@ -58,19 +57,21 @@ console.log(findBestEmployee(employees));
 
 //4
 // Напиши функцію countTotalSalary(employees) приймаючу об'єкт зарплат. Функція рахує загальну суму зарплати працівників і повертає її. Кожне поле об'єкта, переданого в функцію, має вигляд "ім'я":"зарплата".
-function countTotalSalary(employeesSalaries){
-// const sum1 = Object.values(employeesSalaries);
-for (const employer2 in employeesSalaries) {
-  const a = employeesSalaries[employer2]
-  
-}
-return a
-}
 const employeesSalaries = {
-    Andriy: 34000,
-    Olena: 103000,
-    Nazar: 78000,
-    Vlad: 0,
-    Anastasia: 59000,
+  Andriy: 34000,
+  Olena: 103000,
+  Nazar: 78000,
+  Vlad: 0,
+  Anastasia: 59000,
+};
+function countTotalSalary(employeesSalaries){
+const values = Object.values(employeesSalaries)
+ let sum = 0;
+for(let value = 0; value < values.length; value++){
+sum += values[value];
 }
+return sum
+}
+
+
 console.log(countTotalSalary(employeesSalaries));

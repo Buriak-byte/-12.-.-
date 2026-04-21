@@ -91,14 +91,32 @@ function getAllPropValues(arr, prop) {
 console.log(getAllPropValues(arr, "prop"))
 console.log(getAllPropValues(arr, "exp"))
 //6
-const allProducuts = [
-  { name: "milk", count: 3, price: 60 },
-]
-const productName = allProducuts[0].name;
-console.log(productName)
-function calculateTotalPrice(allProducuts, productName){
-  const productPrice = allProducuts[0].price
-  const productsCount = allProducuts[0].count
-  return productPrice * productsCount
+const allProdcuts = [{product: "sandwich",
+    price: 20,
+    count: 1,
+},
+{product: "milk",
+    price: 55,
+    count: 2,
+},
+{product: "butter",
+    price: 80,
+    count: 3,
 }
-console.log(calculateTotalPrice(allProducuts, productName));
+
+
+
+
+];
+function calculateTotalPrice(allProdcuts, productName){
+for (const product of allProdcuts) {
+    
+   
+    if(product.product === productName){
+        return product.price * product.count;
+    }
+    
+}
+ return 0;
+}
+console.log(calculateTotalPrice(allProdcuts, "butter"))
